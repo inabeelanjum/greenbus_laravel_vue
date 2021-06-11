@@ -88,28 +88,37 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
+    
            
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle" v-on:click="status = !status"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle"  v-on:click="doit()"></button>
             </div>
+            
 
            
           
 
         </ul>
-        
+
         <router-view />
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-    data(){
-        return{
-        status:true
-    }
+  
+    
+    computed:{
+        ...mapState(['status'])
     },
+    methods:{
+        doit(){
+        this.$store.commit('changestatus')
+        }
+    }
+  
   
 
 }
