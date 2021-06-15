@@ -67,10 +67,7 @@ export default {
         loginsubmit(){
             this.$store.dispatch('login' ,this.user)
         }
-      
-
     }
-
 }
 </script>
 

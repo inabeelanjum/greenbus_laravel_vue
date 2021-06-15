@@ -1,8 +1,5 @@
 <template>
-  <div class="container-fluid">
-
-                    
-                  
+  <div class="container-fluid">    
                     <!-- Content Row -->
                     <div class="row">
                         <!-- Earnings (Monthly) Card Example -->
@@ -160,31 +157,17 @@
                         </div>
                     </div>
 
-         
-                    
+        
 
                 </div>
+               
+               
 </template>
 
 <script>
-import axios from 'axios'
-export default {
-    data(){
-        return{
-            user:null
-        }
-    },
-    async created(){
-        const response = await axios.post('api/user', {
-            headers:{
-                Authorization: 'Bearer ' + localStorage.getItem('token'),
-            }
-          
-        })
-          console.log(response)
-    }
 
-  
+
+export default {
 }
 </script>
 

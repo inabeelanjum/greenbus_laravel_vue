@@ -15,6 +15,7 @@
 
 
 <script>
+import { mapState } from 'vuex'
 import Dashboard from './Dashboard.vue'
 import Leftbar from './Leftbar.vue'
 import Topbar from './Topbar.vue'
@@ -25,7 +26,17 @@ export default {
         Leftbar,
         Topbar,
         Logout
-    }
+    },
+          
+    computed:{
+        ...mapState(['user']),   
+    },
+    
+ created(){ 
+        this.$store.dispatch('getuser')
+    
+    },
+    
  
 }
 </script>
