@@ -39,4 +39,15 @@ class RegisterController extends Controller
         $success['name'] =  $user->name;
  return response()->json(['success'=>$success], $this-> successStatus); 
     }
+
+    public function user(){
+        $user = Auth::user();
+        if($user)
+        {
+            return response()->json(['data' => $user]);
+        }
+        else{
+            return response()->json(['error' => 'unauthorised']);
+        }
+    }
 }

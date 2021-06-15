@@ -17,8 +17,6 @@ use App\Http\Controllers\RegisterController;
 
 Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [RegisterController::class, 'login']);
-Route::middleware('auth:api')->group( function () {
-
-    // Route::resource('products', ProductController::class);
-
+Route::group(['middleware' => 'auth:api'], function(){
+  Route::post('user', [RegisterController::class , 'user']);
 });
