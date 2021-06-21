@@ -14,7 +14,6 @@ export default createStore({
     },
     user( state,data){
       state.user = data.data.name
-      console.log(state.user)
     }
    
   
